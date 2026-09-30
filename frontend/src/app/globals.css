@@ -1,0 +1,203 @@
+@import "tailwindcss";
+
+/*=============================================================================
+  Design System
+=============================================================================*/
+
+:root {
+
+    /*--------------------------------------------------------------------------
+    | Brand Colors
+    --------------------------------------------------------------------------*/
+
+    --primary: #183B73;
+    --secondary: #46A6D9;
+
+    --dark: #2D2D2D;
+    --light: #F8FAFC;
+
+    --white: #FFFFFF;
+
+    /*--------------------------------------------------------------------------
+    | Semantic Colors
+    --------------------------------------------------------------------------*/
+
+    --background: var(--light);
+
+    --foreground: var(--dark);
+
+    --card: var(--white);
+
+    --card-foreground: var(--dark);
+
+    --muted: #E8EEF5;
+
+    --muted-foreground: #64748B;
+
+    --border: #D9E2EC;
+
+    --success: #22C55E;
+
+    --warning: #F59E0B;
+
+    --danger: #DC2626;
+
+    --info: #0EA5E9;
+
+    /*--------------------------------------------------------------------------
+    | Radius
+    --------------------------------------------------------------------------*/
+
+    --radius-sm: .5rem;
+
+    --radius-md: .75rem;
+
+    --radius-lg: 1rem;
+
+    --radius-xl: 1.5rem;
+
+    /*--------------------------------------------------------------------------
+    | Shadows
+    --------------------------------------------------------------------------*/
+
+    --shadow-sm:
+        0 2px 8px rgba(0,0,0,.05);
+
+    --shadow-md:
+        0 10px 30px rgba(0,0,0,.08);
+
+    --shadow-lg:
+        0 20px 60px rgba(0,0,0,.12);
+
+    /*--------------------------------------------------------------------------
+    | Animation
+    --------------------------------------------------------------------------*/
+
+    --transition-fast: 200ms ease;
+
+    --transition: 300ms ease;
+
+    --transition-slow: 500ms ease;
+
+}
+
+/*=============================================================================
+  Reset
+=============================================================================*/
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    background:var(--background);
+
+    color:var(--foreground);
+
+    font-family:var(--font-vazirmatn);
+
+    overflow-x:hidden;
+
+    text-rendering:optimizeLegibility;
+
+    -webkit-font-smoothing:antialiased;
+
+    -moz-osx-font-smoothing:grayscale;
+
+}
+
+img{
+
+    display:block;
+
+    max-width:100%;
+
+    height:auto;
+
+}
+
+a{
+
+    color:inherit;
+
+    text-decoration:none;
+
+}
+
+button{
+
+    cursor:pointer;
+
+    border:none;
+
+    background:none;
+
+    transition:var(--transition);
+
+}
+
+input,
+textarea,
+select{
+
+    outline:none;
+
+    font:inherit;
+
+}
+
+ul,
+ol{
+
+    list-style:none;
+
+}
+
+/*=============================================================================
+  Selection
+=============================================================================*/
+
+::selection{
+
+    background:var(--primary);
+
+    color:var(--white);
+
+}
+
+/*=============================================================================
+  Scrollbar
+=============================================================================*/
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:999px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#EDF2F7;
+
+}
