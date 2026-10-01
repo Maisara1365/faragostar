@@ -1,6 +1,7 @@
 "use client";
 
 import {
+    Suspense,
     useCallback,
     useEffect,
     useRef,
@@ -38,7 +39,7 @@ import { useLanguage } from "@/context/language-context";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
-export default function MessagesPage() {
+function MessagesContent() {
     const { t, language } = useLanguage();
     const isRTL = language === "fa";
     const searchParams = useSearchParams();
@@ -773,5 +774,13 @@ export default function MessagesPage() {
                 }
             `}</style>
         </>
+    );
+}
+
+export default function MessagesPage() {
+    return (
+        <Suspense fallback={null}>
+            <MessagesContent />
+        </Suspense>
     );
 }

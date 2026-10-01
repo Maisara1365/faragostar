@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -27,7 +27,7 @@ import {
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
-export default function VerifyEmailPage() {
+function VerifyEmailContent() {
     const { t, language } = useLanguage();
 
     const router = useRouter();
@@ -1299,5 +1299,13 @@ export default function VerifyEmailPage() {
                 }
             `}</style>
         </div>
+    );
+}
+
+export default function VerifyEmailPage() {
+    return (
+        <Suspense fallback={null}>
+            <VerifyEmailContent />
+        </Suspense>
     );
 }

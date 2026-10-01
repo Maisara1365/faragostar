@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import axios from "axios";
 import {
     ArrowLeft,
@@ -26,7 +26,7 @@ import { resetPassword } from "@/services/auth";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
-export default function ResetPasswordPage() {
+function ResetPasswordContent() {
     const router = useRouter();
     const searchParams = useSearchParams();
 
@@ -1430,5 +1430,13 @@ export default function ResetPasswordPage() {
                 }
             `}</style>
         </div>
+    );
+}
+
+export default function ResetPasswordPage() {
+    return (
+        <Suspense fallback={null}>
+            <ResetPasswordContent />
+        </Suspense>
     );
 }

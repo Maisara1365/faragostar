@@ -39,7 +39,14 @@ import {
 
 import { company } from "@/config/company";
 import { useLanguage } from "@/context/language-context";
-import LocationMap from "@/components/contact/LocationMap";
+import dynamic from "next/dynamic";
+
+const LocationMap = dynamic(
+    () => import("@/components/contact/LocationMap"),
+    {
+        ssr: false,
+    }
+);
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
