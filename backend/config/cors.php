@@ -10,7 +10,9 @@ return [
     'allowed_methods' => ['*'],
 
     'allowed_origins' => [
-        'http://localhost:3000',
+    	'http://localhost:3000',
+    	'https://faragostar.vercel.app',
+    	'https://faragostar-bwfxcoadc-faragostar.vercel.app',
     ],
 
     'allowed_origins_patterns' => [],
